@@ -48,13 +48,11 @@ In this step you will upload the provided Python scripts to a CDE Resource of ty
 
 Navigate to your CDE Virtual Cluster and Open the Jobs page.
 
-![alt text](img/step1.png)
+![alt text](img/asb_cde_step1.png)
 
 From the left tab, select Resources and create a CDE Resource of type "File".
 
-![alt text](img/step2.png)
-
-![alt text](img/step3.png)
+![alt text](img/asb_cde_step2.png)
 
 Next, upload the "cde_job_move_file.py" and "myfile_1.py" files via the "Upload" icon.
 
@@ -65,15 +63,15 @@ In this step you will create a Python Environment so you can pip install the "az
 
 Navigate back to the CDE Resources tab and create a CDE Resource of type "Python Environment". Select Python 3 and leave the PyPi mirror field blank.
 
-![alt text](img/step5.png)
+![alt text](img/asb_cde_step3.png)
 
 Upload "requirements.txt" from your local machine and allow a few minutes for the Python environment to build.
 
-![alt text](img/step5.png)
+![alt text](img/asb_cde_step4.png)
 
 Scroll down the page and observe the python dependencies that have been added to your environment.
 
-![alt text](img/step5.png)
+![alt text](img/asb_cde_step5.png)
 
 
 #### Step 3: Create a CDE Job
@@ -82,23 +80,21 @@ In this step you will create the CDE Job with the uploaded scripts and Python en
 
 Navigate to the Jobs tab on the left pane. Select the "Create Job" blue icon on the right side.
 
-![alt text](img/step7.png)
+![alt text](img/asb_cde_step6.png)
 
 Next, select the Spark Job Type from the Toggle Bar (Spark 2.4 or 3.2 ok). If you are curious to learn more about Airflow jobs, please visit [this related tutorial](https://github.com/pdefusco/Using_CDE_Airflow).
 
-![alt text](img/step7.png)
+![alt text](img/asb_cde_step7.png)
 
 Under "Application Files" select "File" and then "Select from Resource". Select file "cde_job_move_file.py". This will be the base script for the CDE Job.
 
-![alt text](img/step8.png)
-
 Immediately below, choose Python 3 and select the Python Environment you created earlier.
 
-![alt text](img/step10.png)
+![alt text](img/asb_cde_step8.png)
 
 Expand the "Advanced Options" section. No changes are required but notice the CDE Resource of type file has been associated with the CDE Job for you automatically. This will allow you to mount in the "myfile_1.py" script to the CDE Kubernetes pod from the "cde_job_move_file.py" script.
 
-![alt text](img/step12.png)
+![alt text](img/asb_cde_step9.png)
 
 Finally, click on the "Create and Run" blue icon at the bottom of the page.
 
